@@ -1,0 +1,16 @@
+.block {
+    margin: 0 auto;
+    width: 590px;
+    padding: 80px 0 100px;
+    text-align: center;
+}
+
+.descr {
+    margin-top: 40px;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.descr>:last-child {
+    margin-top: 25px;
+}

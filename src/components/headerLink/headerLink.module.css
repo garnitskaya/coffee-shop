@@ -1,0 +1,28 @@
+.header {
+    font-size: 12px;
+    line-height: 17px;
+}
+
+.nav {
+    display: flex;
+    align-items: flex-end;
+}
+
+.logo {
+    margin: 0 -4px 4px 0;
+    width: 35px;
+    height: 35px;
+}
+
+.list {
+    display: flex;
+    list-style-type: none;
+}
+
+.item {
+    margin-right: 40px;
+}
+
+.item:hover {
+    text-decoration: underline;
+}
