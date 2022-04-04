@@ -1,16 +1,37 @@
 .block {
-    margin: 0 auto;
-    width: 590px;
     padding: 80px 0 100px;
-    text-align: center;
 }
 
 .descr {
-    margin-top: 40px;
+    margin: 40px auto 0;
+    width: 590px;
+    text-align: center;
     font-size: 14px;
     line-height: 20px;
 }
 
 .descr>:last-child {
     margin-top: 25px;
+}
+
+@media (max-width:768px) {
+    .block {
+        padding: 40px 0;
+    }
+
+    .descr {
+        margin: 30px auto 0;
+        width: 100%;
+    }
+}
+
+@media (max-width:576px) {
+    .block {
+        padding: 30px 0;
+    }
+
+
+    .descr {
+        margin: 20px auto 0;
+    }
 }

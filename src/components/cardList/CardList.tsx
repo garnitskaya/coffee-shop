@@ -3,19 +3,16 @@ import { useDispatch } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom';
 
 import { useTypedSelector } from './../../hooks/useTypedSelector';
-import { fetchData } from '../../redux/reducers';
+import { fetchData } from '../../redux/action-creators';
+import { IData } from '../../types/types';
 
 import styles from './cardList.module.css';
-import i from '../../resources/img/aromistico.jpg';
-//import i from '../../resources/img/presto.jpg';
-
-
 interface LocationState {
     pathname: string
 }
 
 const CardList: FC = () => {
-    const { coffeeItems, error, loading } = useTypedSelector(state => state);
+    const { coffeeItems, error, loading, activeFilter, term } = useTypedSelector(state => state);
     const dispatch = useDispatch();
 
     const url = useLocation();
@@ -33,18 +30,35 @@ const CardList: FC = () => {
         return <h1 className='title'>{error}</h1>
     }
 
-    const coffeeItem = coffeeItems.map(({ id, name, country, price }) =>
-        <div className={styles.card} key={id}>
-            <img className={styles.img} src={i} alt={name} />
-            <Link to={`${pathname}/${id}`} className={styles.name}>{name}</Link>
-            <div className={styles.country}>{country}</div>
-            <div className={styles.price}>{price}</div>
-        </div>
-    )
+    const filteredItems = (items: IData[], filter: string) => {
+        if (filter === '') {
+            return items;
+        } else {
+            return items.filter(item => item.country === activeFilter);
+        }
+    }
 
+    const searchItem = (items: IData[], term: string) => {
+        if (term.length === 0) return items;
+
+        return items.filter(item => item.name.toLocaleLowerCase().indexOf(term.toLocaleLowerCase()) > -1);
+    }
+
+    const renderItem = (arr: IData[]) => {
+        return arr.map(({ id, name, country, price, img }) =>
+            <Link to={`${pathname}/${id}`} className={styles.card} key={id}>
+                <img className={styles.img} src={process.env.PUBLIC_URL + img} alt={name} />
+                <div className={styles.name}>{name}</div>
+                <div className={styles.country}>{country}</div>
+                <div className={styles.price}>{price}</div>
+            </Link>
+        )
+    }
+
+    const element = renderItem(filteredItems(searchItem(coffeeItems, term), activeFilter));
     return (
         <div className={styles.cards}>
-            {coffeeItem}
+            {element}
         </div>
     );
 };

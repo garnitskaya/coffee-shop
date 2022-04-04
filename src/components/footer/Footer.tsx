@@ -1,6 +1,7 @@
 import HeaderLink from '../headerLink/HeaderLink';
-import styles from './footer.module.css';
 import beansLogo from '../../resources/icon/beans_logo.svg'
+
+import styles from './footer.module.css';
 
 const Footer = () => {
     return (

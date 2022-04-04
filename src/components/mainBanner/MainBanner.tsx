@@ -1,12 +1,14 @@
+import { FC } from 'react';
 import { Link } from 'react-router-dom';
 import HeaderLink from './../headerLink/HeaderLink';
 import logo from '../../resources/icon/beans_logo_white.svg';
+
 import styles from './mainBanner.module.css';
 
-const MainBanner = () => {
+const MainBanner: FC = () => {
     return (
         <div className={styles.blocks}>
-            <div className={styles.container}>
+            <div className='container'>
                 <HeaderLink />
                 <div className={styles.block}>
                     <h1 className={styles.title}>Everything You Love About Coffee</h1>

@@ -1,15 +1,18 @@
 import React, { FC } from 'react';
 import styles from './aboutBlock.module.css';
-
 interface IProps {
     img: string
+    imgBig: string
     children: React.ReactNode
 }
 
-const AboutBlock: FC<IProps> = ({ img, children }) => {
+const AboutBlock: FC<IProps> = ({ img, imgBig, children }) => {
     return (
         <div className={styles.block}>
-            <img className={styles.img} src={img} alt='image' />
+            <picture className={styles.img}>
+                <source media="(max-width: 768px)" srcSet={imgBig} />
+                <img src={img} alt='image' />
+            </picture>
             <div >
                 {children}
                 <div className={styles.descr}>

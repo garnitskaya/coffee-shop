@@ -4,11 +4,6 @@
     color: #fff;
 }
 
-.container {
-    width: 1140px;
-    margin: 0 auto;
-}
-
 .block {
     margin-top: 110px;
     text-align: center;
@@ -16,7 +11,10 @@
 }
 
 .logo {
-    margin-top: 20px;
+    display: block;
+    margin: 20px auto 0;
+    width: 200px;
+    height: auto;
 }
 
 .title {
@@ -44,4 +42,66 @@ h3.subtitle {
     line-height: 20px;
     border-radius: 3px;
     border: 1px solid #fff;
+}
+
+@media (max-width:768px) {
+    .blocks {
+        padding: 30px 0 100px;
+    }
+
+    .block {
+        margin-top: 70px;
+    }
+
+    .title {
+        font-size: 30px;
+        line-height: 45px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    h2.subtitle {
+        margin-top: 25px;
+    }
+}
+
+@media (max-width:576px) {
+    .blocks {
+        padding: 20px 0 50px;
+    }
+
+    .block {
+        margin-top: 40px;
+    }
+
+    .logo {
+        margin-top: 10px;
+        width: 150px;
+    }
+
+    .title {
+        font-size: 22px;
+    }
+
+    .subtitle {
+        font-size: 15px;
+    }
+
+    h2.subtitle {
+        margin-top: 10px;
+    }
+
+    h3.subtitle {
+        margin-top: 10px;
+    }
+
+    .button {
+        margin-top: 15px;
+        padding: 5px 30px;
+        font-size: 12px;
+    }
+
 }

@@ -1,11 +1,11 @@
-import axios from 'axios';
-import { Dispatch } from 'react';
 import { IData, ActionTypes, Actions } from './../../types/types';
 
 const initialState = {
     coffeeItems: [] as IData[],
     coffeeItem: null as IData | null,
     term: '',
+    activeFilter: '',
+    filteredItems: [] as IData[],
     loading: false,
     error: null as unknown as string,
 }
@@ -23,6 +23,8 @@ const reducer = (state = initialState, action: Actions): InitalStateType => {
             return {
                 ...state,
                 coffeeItems: action.payload,
+                activeFilter: '',
+                filteredItems: action.payload,
                 loading: false
             };
         case ActionTypes.FETCH_DATA_ITEM_SUCCESS:
@@ -37,34 +39,22 @@ const reducer = (state = initialState, action: Actions): InitalStateType => {
                 error: action.payload,
                 loading: false
             };
+        case ActionTypes.ACTIVE_FILTER_CHANGED:
+            return {
+                ...state,
+                activeFilter: action.payload,
+                filteredItems: action.payload === '' ?
+                    state.coffeeItems :
+                    state.coffeeItems.filter(item => item.country === action.payload),
+            };
+        case ActionTypes.SET_TERM:
+            return {
+                ...state,
+                term: action.payload
+            };
         default:
             return state;
     }
 }
 
 export default reducer;
-
-
-export const fetchData = () => async (dispatch: Dispatch<Actions>) => {
-    try {
-        dispatch({ type: ActionTypes.FETCH_DATA });
-        const response = await axios.get<IData[]>('http://localhost:3001/coffee')
-        setTimeout(() => {
-            dispatch({ type: ActionTypes.FETCH_DATA_SUCCESS, payload: response.data })
-        }, 1000)
-    } catch (error) {
-        dispatch({ type: ActionTypes.FETCH_DATA_ERROR, payload: "Error, something went wrong..." });
-    }
-}
-
-export const fetchDataItem = (id: string | undefined) => async (dispatch: Dispatch<Actions>) => {
-    try {
-        dispatch({ type: ActionTypes.FETCH_DATA })
-        const response = await axios.get<IData>(`http://localhost:3001/coffee/${id}`)
-        setTimeout(() => {
-            dispatch({ type: ActionTypes.FETCH_DATA_ITEM_SUCCESS, payload: response.data })
-        }, 1000)
-    } catch (error) {
-        dispatch({ type: ActionTypes.FETCH_DATA_ERROR, payload: "Error, something went wrong..." })
-    }
-}

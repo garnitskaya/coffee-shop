@@ -1,7 +1,7 @@
 import { FC } from 'react';
-import styles from './titleBlock.module.css';
 import logo from '../../../resources/icon/beans_logo.svg';
 
+import styles from './titleBlock.module.css';
 interface IProps {
     title: string
 }

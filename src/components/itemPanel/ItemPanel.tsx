@@ -1,5 +1,6 @@
 import FilterPanel from '../filterPanel/FilterPanel';
 import SearchPanel from '../searchPanel/SearchPanel';
+
 import styles from './itemPanel.module.css';
 
 const ItemPanel = () => {

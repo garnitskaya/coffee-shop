@@ -10,3 +10,15 @@
     width: 200px;
     height: auto;
 }
+
+@media (max-width:576px) {
+    .title {
+        font-size: 22px;
+        line-height: 30px;
+    }
+
+    .logo {
+        margin-top: 10px;
+        width: 150px;
+    }
+}

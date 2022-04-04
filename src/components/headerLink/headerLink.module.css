@@ -26,3 +26,9 @@
 .item:hover {
     text-decoration: underline;
 }
+
+@media (max-width:576px) {
+    .item {
+        margin-right: 22px;
+    }
+}

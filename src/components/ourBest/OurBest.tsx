@@ -2,10 +2,9 @@ import { FC, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { useTypedSelector } from './../../hooks/useTypedSelector';
-import { fetchData } from './../../redux/reducers/index';
+import { fetchData } from './../../redux/action-creators';
 
 import styles from './ourBest.module.css';
-import i from '../../resources/img/aromistico.jpg'
 
 const OurBest: FC = () => {
     const { coffeeItems, loading, error } = useTypedSelector(state => state);
@@ -18,7 +17,7 @@ const OurBest: FC = () => {
     const coffeeItem = coffeeItems.map(({ id, name, img, best, price }) =>
         best ?
             (<div className={styles.card} key={id}>
-                <img className={styles.img} src={i} alt={name} />
+                <img className={styles.img} src={process.env.PUBLIC_URL + img} alt={name} />
                 <div className={styles.name}>{name}</div>
                 <div className={styles.price}>{price}</div>
             </div>
@@ -32,11 +31,13 @@ const OurBest: FC = () => {
 
     return (
         <div className={styles.block}>
-            <h2>Our best</h2>
-            <div className={styles.cards}>
-                {errorMessage}
-                {loadingMessage}
-                {content}
+            <div className='container'>
+                <h2 className={styles.title}>Our best</h2>
+                <div className={styles.cards}>
+                    {errorMessage}
+                    {loadingMessage}
+                    {content}
+                </div>
             </div>
         </div>
     );
