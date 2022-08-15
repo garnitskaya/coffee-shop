@@ -11,7 +11,7 @@ const AboutBlock: FC<IProps> = ({ img, imgBig, children }) => {
         <div className={styles.block}>
             <picture className={styles.img}>
                 <source media="(max-width: 768px)" srcSet={imgBig} />
-                <img src={img} alt='image' />
+                <img src={img} alt='' />
             </picture>
             <div >
                 {children}

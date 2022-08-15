@@ -12,6 +12,7 @@ const OurBest: FC = () => {
 
     useEffect(() => {
         dispatch(fetchData());
+        // eslint-disable-next-line
     }, []);
 
     const coffeeItem = coffeeItems.map(({ id, name, img, best, price }) =>

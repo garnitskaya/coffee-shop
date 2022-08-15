@@ -20,6 +20,7 @@ const CardList: FC = () => {
 
     useEffect(() => {
         dispatch(fetchData());
+        // eslint-disable-next-line
     }, []);
 
     if (loading) {

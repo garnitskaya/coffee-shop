@@ -17,6 +17,7 @@ const CardItem = () => {
 
     useEffect(() => {
         dispatch(fetchDataItem(id));
+        // eslint-disable-next-line
     }, [id]);
 
 
@@ -31,7 +32,7 @@ const CardItem = () => {
     return (
         <div className='container'>
             <div className={styles.card}>
-                <img className={styles.img} src={img} alt='image' />
+                <img className={styles.img} src={img} alt='' />
                 <div className={styles.block}>
                     <TitleBlock title='About it' />
                     <div className={styles.descr}>
