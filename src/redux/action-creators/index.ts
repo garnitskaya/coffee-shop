@@ -5,7 +5,7 @@ import { Actions, ActionTypes, IData } from '../../types/types';
 export const fetchData = () => async (dispatch: Dispatch<Actions>) => {
     try {
         dispatch({ type: ActionTypes.FETCH_DATA });
-        const response = await axios.get<IData[]>('http://localhost:3001/coffee')
+        const response = await axios.get<IData[]>('/coffee')
         setTimeout(() => {
             dispatch({ type: ActionTypes.FETCH_DATA_SUCCESS, payload: response.data })
         }, 500)
@@ -17,7 +17,7 @@ export const fetchData = () => async (dispatch: Dispatch<Actions>) => {
 export const fetchDataItem = (id: string | undefined) => async (dispatch: Dispatch<Actions>) => {
     try {
         dispatch({ type: ActionTypes.FETCH_DATA })
-        const response = await axios.get<IData>(`http://localhost:3001/coffee/${id}`)
+        const response = await axios.get<IData>(`/coffee/${id}`)
         setTimeout(() => {
             dispatch({ type: ActionTypes.FETCH_DATA_ITEM_SUCCESS, payload: response.data })
         }, 500)

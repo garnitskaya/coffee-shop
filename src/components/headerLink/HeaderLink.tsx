@@ -14,7 +14,7 @@ const HeaderLink: FC<IProps> = ({ black }) => {
             <nav className={styles.nav}>
                 <img className={styles.logo} src={black ? logoBlack : logo} alt="logo" />
                 <ul className={styles.list}>
-                    <li><Link className={styles.item} to='/coffee-shop'>Coffee house</Link></li>
+                    <li><Link className={styles.item} to='/'>Coffee house</Link></li>
                     <li><Link className={styles.item} to='/ourCoffee'>Our coffee</Link></li>
                     <li><Link className={styles.item} to='/forYour'>For your pleasure</Link></li>
                 </ul>
