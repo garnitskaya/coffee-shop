@@ -1,7 +1,6 @@
 {
   "name": "coffee-shop",
   "version": "0.1.0",
-  "homepage": "http://garnitskaya.github.io/coffee-shop",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.1",
@@ -28,8 +27,6 @@
   },
   "proxy": "http://localhost:3001",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
