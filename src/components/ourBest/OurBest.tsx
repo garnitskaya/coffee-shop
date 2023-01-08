@@ -1,47 +1,49 @@
-import { FC, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useEffect } from "react";
 
-import { useTypedSelector } from './../../hooks/useTypedSelector';
-import { fetchData } from './../../redux/action-creators';
+import Skeleton from "./Skeleton";
+import { useAppDispatch, useTypedSelector } from "../../hooks/useTypedSelector";
+import { fetchData } from "../../redux/action-creators";
 
-import styles from './ourBest.module.css';
+import styles from "./ourBest.module.css";
 
-const OurBest: FC = () => {
-    const { coffeeItems, loading, error } = useTypedSelector(state => state);
-    const dispatch = useDispatch();
+const OurBest: React.FC = () => {
+  const { coffeeItems, loading, error } = useTypedSelector((state) => state);
+  const dispatch = useAppDispatch();
 
-    useEffect(() => {
-        dispatch(fetchData());
-        // eslint-disable-next-line
-    }, []);
+  useEffect(() => {
+    dispatch(fetchData("", ""));
+  }, []);
 
-    const coffeeItem = coffeeItems.map(({ id, name, img, best, price }) =>
-        best ?
-            (<div className={styles.card} key={id}>
-                <img className={styles.img} src={process.env.PUBLIC_URL + img} alt={name} />
-                <div className={styles.name}>{name}</div>
-                <div className={styles.price}>{price}</div>
-            </div>
-            )
-            : null
-    )
+  const coffeeItem = coffeeItems.map(({ id, name, img, best, price }) =>
+    best ? (
+      <div className={styles.card} key={id}>
+        <img
+          className={styles.img}
+          src={process.env.PUBLIC_URL + img}
+          alt={name}
+        />
+        <div className={styles.name}>{name}</div>
+        <div className={styles.price}>{price}</div>
+      </div>
+    ) : null
+  );
 
-    const errorMessage = error ? <h3 className='title'>{error}</h3> : null;
-    const loadingMessage = loading ? <h3 className='title'>Loading...</h3> : null
-    const content = !(loading || error) ? coffeeItem : null;
+  if (error) {
+    return <h1 className="title">{error}</h1>;
+  }
 
-    return (
-        <div className={styles.block}>
-            <div className='container'>
-                <h2 className={styles.title}>Our best</h2>
-                <div className={styles.cards}>
-                    {errorMessage}
-                    {loadingMessage}
-                    {content}
-                </div>
-            </div>
-        </div>
-    );
+  const skeletons = [...new Array(3)].map((_, index) => (
+    <Skeleton key={index} />
+  ));
+
+  return (
+    <div className={styles.block}>
+      <div className="container">
+        <h2 className={styles.title}>Our best</h2>
+        <div className={styles.cards}>{loading ? skeletons : coffeeItem}</div>
+      </div>
+    </div>
+  );
 };
 
 export default OurBest;

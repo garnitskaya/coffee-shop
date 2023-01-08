@@ -1,25 +1,30 @@
-import { BrowserRouter, Routes, Route, } from "react-router-dom";
-import MainPage from '../pages/MainPage';
-import Footer from './../footer/Footer';
-import OurCoffeePage from '../pages/OurCoffeePage';
-import ForYourPage from '../pages/ForYourPage';
-import CardItemPage from './../pages/CardItemPage';
-import Page404 from '../pages/404';
+import React, { Suspense } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import { Footer } from "../";
+
+const MainPage = React.lazy(() => import("../../pages/MainPage"));
+const CardItemPage = React.lazy(() => import("../../pages/CardItemPage"));
+const ForYourPage = React.lazy(() => import("../../pages/ForYourPage"));
+const OurCoffeePage = React.lazy(() => import("../../pages/OurCoffeePage"));
+const Page404 = React.lazy(() => import("../../pages/404"));
 
 const App = () => {
-    return (
-        <BrowserRouter>
-            <Routes>
-                <Route path='/' element={<MainPage />} />
-                <Route path='/ourCoffee' element={<OurCoffeePage />} />
-                <Route path='/forYour' element={<ForYourPage />} />
-                <Route path='/ourCoffee/:id' element={<CardItemPage />} />
-                <Route path='/forYour/:id' element={<CardItemPage />} />
-                <Route path='*' element={<Page404 />} />
-            </Routes>
-            <Footer />
-        </BrowserRouter>
-    );
+  return (
+    <BrowserRouter>
+      <Suspense fallback={<h1 className="title">Loading...</h1>}>
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/ourCoffee" element={<OurCoffeePage />} />
+          <Route path="/forYour" element={<ForYourPage />} />
+          <Route path="/ourCoffee/:id" element={<CardItemPage />} />
+          <Route path="/forYour/:id" element={<CardItemPage />} />
+          <Route path="*" element={<Page404 />} />
+        </Routes>
+      </Suspense>
+      <Footer />
+    </BrowserRouter>
+  );
 };
 
 export default App;

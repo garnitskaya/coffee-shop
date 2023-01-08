@@ -1,80 +1,80 @@
 .block {
-    padding: 80px 0 110px;
-    background: url('../../resources/img/bg.jpg') center center/cover no-repeat;
-    text-align: center;
+  padding: 80px 0 110px;
+  background: url('../../resources/img/bg.jpg') center center/cover no-repeat;
+  text-align: center;
 }
 
 .cards {
-    margin-top: 40px;
-    display: flex;
-    justify-content: center;
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
 }
 
 .card {
-    padding: 21px;
-    display: grid;
-    grid-template-rows: 145px 20px auto;
-    align-items: center;
-    justify-content: center;
-    margin: 0 35px 0;
-    width: 220px;
-    height: 240px;
-    background: rgba(255, 255, 255, 0.65);
-    border-radius: 8px;
+  padding: 21px;
+  display: grid;
+  grid-template-rows: 145px 20px auto;
+  align-items: center;
+  justify-content: center;
+  margin: 0 35px 0;
+  width: 220px;
+  height: 240px;
+  background: rgba(255, 255, 255, 0.65);
+  border-radius: 8px;
 }
 
 .title {
-    font-size: 24px;
-    line-height: 35px;
+  font-size: 24px;
+  line-height: 35px;
 }
 
 .img {
-    max-width: 100%;
-    height: auto;
-    object-fit: cover;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 .name {
-    font-size: 14px;
-    line-height: 20px;
+  font-size: 14px;
+  line-height: 20px;
 }
 
 .price {
-    justify-self: end;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 20px;
+  justify-self: end;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
 }
 
 @media (max-width:992px) {
-    .card {
-        padding: 21px;
-        margin: 0 10px 0;
-    }
+  .card {
+    padding: 21px;
+    margin: 0 10px 0;
+  }
 }
 
 @media (max-width:768px) {
-    .block {
-        padding: 40px 0 40px;
-    }
+  .block {
+    padding: 40px 0 40px;
+  }
 
-    .cards {
-        margin-top: 0;
-        flex-wrap: wrap;
-    }
+  .cards {
+    margin-top: 0;
+    flex-wrap: wrap;
+  }
 
-    .card {
-        margin-top: 30px;
-    }
+  .card {
+    margin-top: 30px;
+  }
 }
 
 @media (max-width:576px) {
-    .block {
-        padding: 30px 0 30px;
-    }
+  .block {
+    padding: 30px 0 30px;
+  }
 
-    .title {
-        font-size: 22px;
-        line-height: 30px;
-    }
+  .title {
+    font-size: 22px;
+    line-height: 30px;
+  }
 }

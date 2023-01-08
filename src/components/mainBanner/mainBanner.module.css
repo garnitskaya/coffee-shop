@@ -1,107 +1,107 @@
 .blocks {
-    padding: 30px 0 200px;
-    background: url('../../resources/img/main_bg.jpg') center center/cover no-repeat;
-    color: #fff;
+  padding: 30px 0 200px;
+  background: url('../../resources/img/main_bg.jpg') center center/cover no-repeat;
+  color: #fff;
 }
 
 .block {
-    margin-top: 110px;
-    text-align: center;
-    font-weight: 700;
+  margin-top: 110px;
+  text-align: center;
+  font-weight: 700;
 }
 
 .logo {
-    display: block;
-    margin: 20px auto 0;
-    width: 200px;
-    height: auto;
+  display: block;
+  margin: 20px auto 0;
+  width: 200px;
+  height: auto;
 }
 
 .title {
-    font-size: 40px;
-    line-height: 58px;
+  font-size: 40px;
+  line-height: 58px;
 }
 
 .subtitle {
-    font-size: 24px;
-    line-height: 35px;
+  font-size: 24px;
+  line-height: 35px;
 }
 
 h2.subtitle {
-    margin-top: 35px;
+  margin-top: 35px;
 }
 
 h3.subtitle {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .button {
-    margin-top: 20px;
-    padding: 5px 42px;
-    font-size: 14px;
-    line-height: 20px;
-    border-radius: 3px;
-    border: 1px solid #fff;
+  margin-top: 20px;
+  padding: 5px 42px;
+  font-size: 14px;
+  line-height: 20px;
+  border-radius: 3px;
+  border: 1px solid #fff;
 }
 
 @media (max-width:768px) {
-    .blocks {
-        padding: 30px 0 100px;
-    }
+  .blocks {
+    padding: 30px 0 100px;
+  }
 
-    .block {
-        margin-top: 70px;
-    }
+  .block {
+    margin-top: 70px;
+  }
 
-    .title {
-        font-size: 30px;
-        line-height: 45px;
-    }
+  .title {
+    font-size: 30px;
+    line-height: 45px;
+  }
 
-    .subtitle {
-        font-size: 18px;
-        line-height: 24px;
-    }
+  .subtitle {
+    font-size: 18px;
+    line-height: 24px;
+  }
 
-    h2.subtitle {
-        margin-top: 25px;
-    }
+  h2.subtitle {
+    margin-top: 25px;
+  }
 }
 
 @media (max-width:576px) {
-    .blocks {
-        padding: 20px 0 50px;
-    }
+  .blocks {
+    padding: 20px 0 50px;
+  }
 
-    .block {
-        margin-top: 40px;
-    }
+  .block {
+    margin-top: 40px;
+  }
 
-    .logo {
-        margin-top: 10px;
-        width: 150px;
-    }
+  .logo {
+    margin-top: 10px;
+    width: 150px;
+  }
 
-    .title {
-        font-size: 22px;
-    }
+  .title {
+    font-size: 22px;
+  }
 
-    .subtitle {
-        font-size: 15px;
-    }
+  .subtitle {
+    font-size: 15px;
+  }
 
-    h2.subtitle {
-        margin-top: 10px;
-    }
+  h2.subtitle {
+    margin-top: 10px;
+  }
 
-    h3.subtitle {
-        margin-top: 10px;
-    }
+  h3.subtitle {
+    margin-top: 10px;
+  }
 
-    .button {
-        margin-top: 15px;
-        padding: 5px 30px;
-        font-size: 12px;
-    }
+  .button {
+    margin-top: 15px;
+    padding: 5px 30px;
+    font-size: 12px;
+  }
 
 }

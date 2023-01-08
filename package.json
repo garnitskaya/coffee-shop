@@ -2,6 +2,7 @@
   "name": "coffee-shop",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://garnitskaya.github.io/coffee-shop",
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.1",
     "@testing-library/jest-dom": "^5.16.3",
@@ -16,6 +17,7 @@
     "gh-pages": "^3.2.3",
     "json-server": "^0.17.0",
     "react": "^18.0.0",
+    "react-content-loader": "^6.2.0",
     "react-dom": "^18.0.0",
     "react-redux": "^7.2.8",
     "react-router-dom": "^6.3.0",
@@ -27,11 +29,10 @@
   },
   "proxy": "http://localhost:3001",
   "scripts": {
-    "start": "react-scripts start",
+    "start": "concurrently \"react-scripts start\" \"npx json-server ./public/coffee.json --port 3001\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "json-server": "json-server --watch ./public/coffee.json --port 3001"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [

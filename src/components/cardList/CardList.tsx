@@ -1,67 +1,82 @@
-import { FC, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { Link, useLocation } from 'react-router-dom';
+import { useEffect } from "react";
+import { useLocation, useSearchParams } from "react-router-dom";
 
-import { useTypedSelector } from './../../hooks/useTypedSelector';
-import { fetchData } from '../../redux/action-creators';
-import { IData } from '../../types/types';
+import Skeleton from "./Skeleton";
+import CardListItem from './CardListItem';
+import { useAppDispatch, useTypedSelector } from "../../hooks/useTypedSelector";
+import { fetchData, setTerm } from "../../redux/action-creators";
+import { IData } from "../../types";
+import { useDebounce } from "../../hooks/useDebounce";
+import { filtersChanged } from './../../redux/action-creators';
 
-import styles from './cardList.module.css';
-interface LocationState {
-    pathname: string
-}
+import styles from "./cardList.module.css";
 
-const CardList: FC = () => {
-    const { coffeeItems, error, loading, activeFilter, term } = useTypedSelector(state => state);
-    const dispatch = useDispatch();
+type QueryParamsType = {
+  q?: string;
+  country?: string;
+};
 
-    const url = useLocation();
-    const pathname = url.pathname as unknown as LocationState;
+const CardList: React.FC = () => {
+  const {
+    coffeeItems,
+    error,
+    loading,
+    activeFilter,
+    term } = useTypedSelector((state) => state);
+  const dispatch = useAppDispatch();
+  const location = useLocation();
+  const pathname = location.pathname;
+  const debouncedSearch = useDebounce(onRequest);
+  const [searchParams, setSearchParams] = useSearchParams();
 
-    useEffect(() => {
-        dispatch(fetchData());
-        // eslint-disable-next-line
-    }, []);
+  const search = searchParams.get("q") || "";
+  const filter = searchParams.get("country") || "";
 
-    if (loading) {
-        return <h1 className='title'>Loading...</h1>
+  function onRequest(search: string, filter: string) {
+    dispatch(fetchData(search, filter));
+  }
+
+  useEffect(() => {
+    if (pathname === "/ourCoffee") {
+      const params: QueryParamsType = {};
+
+      if (term.length) params.q = term;
+      if (activeFilter.length) params.country = activeFilter;
+
+      setSearchParams(params);
+      debouncedSearch(search, filter);
+    } else {
+      debouncedSearch("", "");
     }
+  }, [term, activeFilter, searchParams]);
 
-    if (error) {
-        return <h1 className='title'>{error}</h1>
+  useEffect(() => {
+    if (search || filter) {
+      dispatch(setTerm(search))
+      dispatch(filtersChanged(filter))
     }
+  }, []);
 
-    const filteredItems = (items: IData[], filter: string) => {
-        if (filter === '') {
-            return items;
-        } else {
-            return items.filter(item => item.country === activeFilter);
-        }
+  if (error) {
+    return <h1 className="title">{error}</h1>;
+  }
+
+  const skeletons = [...new Array(6)].map((_, index) => (
+    <Skeleton key={index} />
+  ));
+
+  const renderItem = (arr: IData[]) => {
+    if (arr.length === 0) {
+      return skeletons;
     }
+    return arr.map((item) => (
+      <CardListItem key={item.id}{...item} pathname={pathname} />
+    ));
+  };
 
-    const searchItem = (items: IData[], term: string) => {
-        if (term.length === 0) return items;
+  const elements = renderItem(coffeeItems);
 
-        return items.filter(item => item.name.toLocaleLowerCase().indexOf(term.toLocaleLowerCase()) > -1);
-    }
-
-    const renderItem = (arr: IData[]) => {
-        return arr.map(({ id, name, country, price, img }) =>
-            <Link to={`${pathname}/${id}`} className={styles.card} key={id}>
-                <img className={styles.img} src={process.env.PUBLIC_URL + img} alt={name} />
-                <div className={styles.name}>{name}</div>
-                <div className={styles.country}>{country}</div>
-                <div className={styles.price}>{price}</div>
-            </Link>
-        )
-    }
-
-    const element = renderItem(filteredItems(searchItem(coffeeItems, term), activeFilter));
-    return (
-        <div className={styles.cards}>
-            {element}
-        </div>
-    );
+  return <div className={styles.cards}>{loading ? skeletons : elements}</div>;
 };
 
 export default CardList;
