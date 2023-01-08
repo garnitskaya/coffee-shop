@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkcoffee_shop=self.webpackChunkcoffee_shop||[]).push([[277],{1277:function(e,s,c){c.r(s);var f=c(1508),n=c(184);s.default=function(){return(0,n.jsxs)("div",{children:[(0,n.jsx)(f.$2,{}),(0,n.jsx)(f.gc,{}),(0,n.jsx)(f.l8,{})]})}}}]);
+//# sourceMappingURL=277.bb750913.chunk.js.map

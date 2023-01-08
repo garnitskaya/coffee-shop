@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkcoffee_shop=self.webpackChunkcoffee_shop||[]).push([[534],{9534:function(e,f,s){s.r(f);var c=s(1508),o=s(2380),t=s(8398),u=s(184);f.default=function(){return(0,u.jsxs)("div",{children:[(0,u.jsx)(o.jL,{title:"Our Coffee",background:t}),(0,u.jsx)(c.Ss,{})]})}},8398:function(e,f,s){e.exports=s.p+"static/media/our-coffee-bg.ae74ac7a61b733ba32ef.jpg"}}]);
+//# sourceMappingURL=534.ba07847c.chunk.js.map

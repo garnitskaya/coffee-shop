@@ -1,0 +1,58 @@
+{
+    "coffee": [
+        {
+            "id": 1,
+            "name": "Solimo Coffee Beans 2 kg",
+            "img":"/solimo.jpg",
+            "country": "Brazil",
+            "price": "10.73$",
+            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            "best": true
+        },
+        {
+            "id": 2,
+            "name": "Presto Coffee Beans 1 kg",
+            "img":"/presto.jpg",
+            "country": "Brazil",
+            "price": "15.99$",
+            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            "best": true
+        },
+        {
+            "id": 3,
+            "name": "AROMISTICO Coffee 1 kg",
+            "img":"/aromistico.jpg",
+            "country": "Brazil",
+            "price": "6.99$",
+            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            "best": true
+        },
+        {
+            "id": 4,
+            "name": "AROMISTICO Coffee 1 kg",
+            "img":"/aromistico.jpg",
+            "country": "Brazil",
+            "price": "6.99$",
+            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            "best": false
+        },
+        {
+            "id": 5,
+            "name": "AROMISTICO Coffee 1 kg",
+            "img":"/aromistico.jpg",
+            "country": "Kenya",
+            "price": "6.99$",
+            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            "best": false
+        },
+        {
+            "id": 6,
+            "name": "AROMISTICO Coffee 1 kg",
+            "img":"/aromistico.jpg",
+            "country": "Columbia",
+            "price": "6.99$",
+            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            "best": false
+        }
+    ]
+}

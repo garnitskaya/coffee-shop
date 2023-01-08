@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/coffee-shop/static/css/main.c654f988.css",
+    "main.js": "/coffee-shop/static/js/main.71cc5fe3.js",
+    "static/js/277.bb750913.chunk.js": "/coffee-shop/static/js/277.bb750913.chunk.js",
+    "static/js/534.ba07847c.chunk.js": "/coffee-shop/static/js/534.ba07847c.chunk.js",
+    "static/js/75.5876fdb2.chunk.js": "/coffee-shop/static/js/75.5876fdb2.chunk.js",
+    "static/js/681.f6979246.chunk.js": "/coffee-shop/static/js/681.f6979246.chunk.js",
+    "static/js/453.0815adc5.chunk.js": "/coffee-shop/static/js/453.0815adc5.chunk.js",
+    "static/media/bg.jpg": "/coffee-shop/static/media/bg.e73347dac8273b8cda2a.jpg",
+    "static/media/main_bg.jpg": "/coffee-shop/static/media/main_bg.98dae857853bce829cbe.jpg",
+    "static/media/our-coffee-bg.jpg": "/coffee-shop/static/media/our-coffee-bg.ae74ac7a61b733ba32ef.jpg",
+    "static/media/for-your-pleasure.jpg": "/coffee-shop/static/media/for-your-pleasure.f1aa37f0aa9aa069e1d5.jpg",
+    "static/media/aromistico_big.jpg": "/coffee-shop/static/media/aromistico_big.ac1ab1a0c921c57dbb2e.jpg",
+    "static/media/aboutBlock_big.jpg": "/coffee-shop/static/media/aboutBlock_big.747129b2ff7becae8012.jpg",
+    "static/media/about-our-beans.jpg": "/coffee-shop/static/media/about-our-beans.dc9ee360d87163ff99ee.jpg",
+    "static/media/about-our-goods.jpg": "/coffee-shop/static/media/about-our-goods.75bdf77b5d9a601887b2.jpg",
+    "static/media/about-our-goods_big.jpg": "/coffee-shop/static/media/about-our-goods_big.50d3cadaa1eef99decb5.jpg",
+    "static/media/coffee-beans.svg": "/coffee-shop/static/media/coffee-beans.2f3f9229fef9dcdce735ddd42da2e008.svg",
+    "static/media/coffee-beans_black.svg": "/coffee-shop/static/media/coffee-beans_black.b203ac4aa243222ebe7fda99b2c78a55.svg",
+    "static/media/beans_logo_white.svg": "/coffee-shop/static/media/beans_logo_white.d8ad06a77a7f633d0c2a9736d6fb4634.svg",
+    "static/media/beans_logo.svg": "/coffee-shop/static/media/beans_logo.023b976cf584c92cb61afe5c82a0d35f.svg",
+    "index.html": "/coffee-shop/index.html",
+    "main.c654f988.css.map": "/coffee-shop/static/css/main.c654f988.css.map",
+    "main.71cc5fe3.js.map": "/coffee-shop/static/js/main.71cc5fe3.js.map",
+    "277.bb750913.chunk.js.map": "/coffee-shop/static/js/277.bb750913.chunk.js.map",
+    "534.ba07847c.chunk.js.map": "/coffee-shop/static/js/534.ba07847c.chunk.js.map",
+    "75.5876fdb2.chunk.js.map": "/coffee-shop/static/js/75.5876fdb2.chunk.js.map",
+    "681.f6979246.chunk.js.map": "/coffee-shop/static/js/681.f6979246.chunk.js.map",
+    "453.0815adc5.chunk.js.map": "/coffee-shop/static/js/453.0815adc5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c654f988.css",
+    "static/js/main.71cc5fe3.js"
+  ]
+}
